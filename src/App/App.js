@@ -1,14 +1,21 @@
-import logo from './logo.svg';
+// import logo from '../logo.svg';
 import './App.css';
 
 function App() {
+  const word = 'React';
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Colin Wong 網頁開發訓練場</h1>
+      <h1>Colin Wong</h1>
+
       </header>
+
+      <body className="App-body">
+
+      </body>
     </div>
+    // <h1>Hello, {word}!</h1>
+
   );
 }
 
