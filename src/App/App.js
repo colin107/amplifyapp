@@ -1,6 +1,9 @@
 // import logo from '../logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+
+import Button from '@mui/material/Button';
+
 function App() {
   const [count, setCount] = useState(1);
   const [lists, setLists] = useState([])
@@ -19,7 +22,11 @@ function App() {
   function HasResults(){
     var rows = [];
     for (var i = 0; i < lists.results.length; i++) {
-      rows.push(<div><img src={lists.results[i].image}/><p>{lists.results[i].name}</p></div>);
+      rows.push(
+      <div>
+        <img src={lists.results[i].image} />
+        <p>{lists.results[i].name}</p>
+        </div>);
     }
 
     return (
@@ -38,21 +45,19 @@ function App() {
 
   return (
     <div className="App">
+
+      
       <header className="App-header">
-      {/* <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" className="App-logo" alt="logo" /> */}
-
-
-        { 
-          <ul>
-            {(lists.results!=null)?(HasResults()):(HasNoResults())}
-          </ul> 
-        }
-        <button onClick={() => setCount(count+1)}>
-          Next
-        </button>
 
       </header>
-      <body className="App-body">
+      <body className="App-body">        
+        <ul>
+          {(lists.results!=null)?(HasResults()):(HasNoResults())}
+        </ul> 
+
+        <Button variant="contained" onClick={() => setCount(count+1)}>
+          Next
+        </Button>
       </body>
     </div>
   );
