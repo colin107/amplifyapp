@@ -14,30 +14,37 @@ function App() {
     .then(json => setLists(json))
   }, [count])
 
-  // {
-  //   if (lists.results != null){
-  //     <ul>
-  //       lists.results.map(
-  //         item => (
-  //           <p key={item.id}>{item.name}</p>
-  //         )
-  //       )
-  //     </ul> 
-  //   }
-  // }
 
+
+  function HasResults(){
+    var rows = [];
+    for (var i = 0; i < lists.results.length; i++) {
+      rows.push(<div><img src={lists.results[i].image}/><p>{lists.results[i].name}</p></div>);
+    }
+
+    return (
+      <div>
+        {rows}
+      </div>
+    )
+  }
+  function HasNoResults(){
+    return(
+      <p>nothing here</p>
+    )
+  }
 
 
 
   return (
     <div className="App">
       <header className="App-header">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      {/* <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" className="App-logo" alt="logo" /> */}
 
 
         { 
           <ul>
-            {(lists.results!=null)?(lists.results.map(item => (<p key={item.id}>{item.name}</p>))):(<p>nothing here</p>)}
+            {(lists.results!=null)?(HasResults()):(HasNoResults())}
           </ul> 
         }
         <button onClick={() => setCount(count+1)}>
