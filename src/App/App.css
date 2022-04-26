@@ -19,9 +19,9 @@
   background-color: #000000;
   /* min-height: 100vh; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
   font-family:courier;
   color: rgb(0, 139, 30);
@@ -42,6 +42,16 @@
 .App-link {
   color: #004558;
 }
+
+.App-Drawer-Icon{
+  font: 'inherit';
+  border: '1px solid blue';
+  padding: '8px';
+  cursor: 'pointer';
+  align-items: center;
+  justify-content: center;
+}
+
 
 @keyframes App-logo-spin {
   from {
