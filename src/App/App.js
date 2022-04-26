@@ -14,7 +14,17 @@ function App() {
     .then(json => setLists(json))
   }, [count])
 
-
+  // {
+  //   if (lists.results != null){
+  //     <ul>
+  //       lists.results.map(
+  //         item => (
+  //           <p key={item.id}>{item.name}</p>
+  //         )
+  //       )
+  //     </ul> 
+  //   }
+  // }
 
 
 
@@ -24,21 +34,16 @@ function App() {
       <header className="App-header">
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
+
+        { 
+          <ul>
+            {(lists.results!=null)?(lists.results.map(item => (<p key={item.id}>{item.name}</p>))):(<p>nothing here</p>)}
+          </ul> 
+        }
         <button onClick={() => setCount(count+1)}>
           Next
         </button>
 
-        {/* <ul>
-          {
-
-              lists.results.map(
-                item => (
-                  <p key={item.id}>{item.name}</p>
-                )
-              )
-
-          }
-        </ul> */}
       </header>
       <body className="App-body">
       </body>
