@@ -1,6 +1,6 @@
 import './component1.css';
 import React, { useState, useEffect } from 'react';
-
+import Button from '@mui/material/Button';
 function Component1() {
   const [count, setCount] = useState(1);
   const [lists, setLists] = useState([])
@@ -17,7 +17,7 @@ function Component1() {
     for (var i = 0; i < lists.results.length; i++) {
       rows.push(
       <div>
-        <img src={lists.results[i].image} />
+        {/* <img src={lists.results[i].image} /> */}
         <p>{lists.results[i].name}</p>
         </div>);
     }
@@ -37,19 +37,24 @@ function Component1() {
   return (
 
     <div className="Component1">
-      123
       <div>
-      <HasNoResults />
-    {/* <HasResults /> */}
-
-      </div>
-
-    
-    
-    {/* <HasResults></HasResults> */}
-    {/* <button onClick={() => setCount(count+1)}>
-          Next
+        <HasNoResults />
+        <ul>
+          {(lists.results!=null)?(HasResults()):(HasNoResults())}
+        </ul> 
+        {/* <button onClick={() => setCount(count+1)}>
+          <Button variant="contained" onClick={() => setCount(count+1)}>
+            Next
         </button> */}
+        <Button variant="contained"     
+        style={{
+        borderRadius: 35,
+        backgroundColor: "#21b6ae",
+        padding: "18px 36px",
+        fontSize: "18px"
+        }}
+        onClick={() => setCount(count+1)}>Next</Button>
+      </div>
     </div>
   );
 }
