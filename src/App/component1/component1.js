@@ -35,13 +35,22 @@ function Component1() {
   }
 
   return (
-    <>
-    <div className="Component1">123</div>
-    <HasResults></HasResults>
-    <button onClick={() => setCount(count+1)}>
+
+    <div className="Component1">
+      123
+      <div>
+      <HasNoResults />
+    {/* <HasResults /> */}
+
+      </div>
+
+    
+    
+    {/* <HasResults></HasResults> */}
+    {/* <button onClick={() => setCount(count+1)}>
           Next
-        </button>
-    </>
+        </button> */}
+    </div>
   );
 }
 
